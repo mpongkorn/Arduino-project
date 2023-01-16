@@ -27,9 +27,9 @@ void loop() {
       k = 1;
     }
   }
-  if (i > 68 && i < 71) {
+  if (i > 68 && i < 73) {
     digitalWrite(5, LOW);
-    if (i == 70) {
+    if (i == 72) {
       i = 0;
     }
   }
@@ -38,27 +38,21 @@ void loop() {
   value = digitalRead(8);
   if (value == 0) {
     digitalWrite(7, HIGH);
-    b = 1;
     a = 0;
   }
   if (value == 1) {
-    //    delay(10000);
-
-    if ( b == 1) {
-      if (a == 0) {
-        j = 0;
-        a = 1;
-      }
-      if ( a == 1 && j >= 20000) {
-        digitalWrite(7, LOW);
-        a = 0;
-        b = 0;
-      }
+    //    delay 10 seconds before digitalWrite LOW
+    if (a == 0) {
+      j = 0;
+      a = 1;
+    }
+    if ( a == 1 && j >= 20000) {
+      digitalWrite(7, LOW);
+      a = 0;
     }
   }
   delayMicroseconds(500);
 }
-
 
 
 
