@@ -39,11 +39,11 @@ void loop() {
   //
 
   value = digitalRead(input_pin);
-  if (value == 0) {
+  if (value == 1) {
     digitalWrite(output_pin, HIGH);
     a = 0;
   }
-  if (value == 1) {
+  if (value == 0) {
     //    delay 10 seconds before digitalWrite LOW
     if (a == 0) {
       j = 0;
